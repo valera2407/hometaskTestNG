@@ -1,9 +1,0 @@
-<suite name = "rozetkaSuite">
-    <test name = "rozetkaSuite">
-        <classes name = "rozetka">
-            <class name = "tests.TestRozetka">
-                TestRozetka
-            </class>
-        </classes>
-    </test>
-</suite>

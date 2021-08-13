@@ -1,9 +1,0 @@
-<suite name = "hotlineSuite">
-    <test name = "hotlineTest">
-        <classes name = "hotline">
-            <class name = "tests.TestHotLine">
-                TestHotline
-            </class>
-        </classes>
-    </test>
-</suite>
