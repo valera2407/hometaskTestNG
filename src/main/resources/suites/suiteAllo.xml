@@ -1,0 +1,11 @@
+<suite name = "alloSuite">
+    <test name = "alloTest">
+        <classes name = "allo">
+            <class name = "tests.TestAllo">
+                TestAllo
+            </class>
+        </classes>
+    </test>
+</suite>
+
+
