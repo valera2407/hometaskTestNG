@@ -22,7 +22,7 @@ public class CatalogPage {
     WebElement trampoline;
 
 
-    public void findBatutes(WebDriver webDriver){
+    public void findTrampoline(WebDriver webDriver){
         Actions actions = new Actions(webDriver);
         WebDriverWait wait = new WebDriverWait(webDriver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(catalog));

@@ -1,4 +1,4 @@
-package tests;
+package util.layer;
 
 import com.codeborne.selenide.Configuration;
 import org.testng.ITestListener;

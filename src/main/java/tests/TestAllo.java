@@ -9,6 +9,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.*;
+import util.layer.Listen;
+
+import java.util.List;
 
 @Listeners(Listen.class)
 public class TestAllo {
@@ -34,12 +37,14 @@ public class TestAllo {
 
     @Test(dataProvider = "providerAllo",
             dataProviderClass = DataProviderAllo.class)
-    public void searh(String product){
+    public void searh(List<String> products){
         SearchPage searchPage = PageFactory.initElements(webDriver, SearchPage.class);
         BuyPage buyPage = PageFactory.initElements(webDriver, BuyPage.class);
-        searchPage.findProducts(product, webDriver);
-        searchPage.openProduct(webDriver);
-        buyPage.addToBasket(webDriver);
+        for (String product : products) {
+            searchPage.findProducts(product, webDriver);
+            searchPage.openProduct(webDriver);
+            buyPage.addToBasket(webDriver);
+        }
     }
 
     @Test

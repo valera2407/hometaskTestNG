@@ -8,6 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.*;
+import util.layer.Listen;
+
+import java.util.List;
 
 @Listeners(Listen.class)
 public class TestHotLine {
@@ -34,12 +37,14 @@ public class TestHotLine {
 
     @Test(dataProvider = "providerHotLine",
             dataProviderClass = DataProviderHotLine.class)
-    public void searchAndAddToList(String product){
+    public void searchAndAddToList(List<String> products){
         SearchPage searchPage = PageFactory.initElements(webDriver, SearchPage.class);
         LikedPage likedPage = PageFactory.initElements(webDriver, LikedPage.class);
-        searchPage.findProducts(product, webDriver);
-        searchPage.openProduct(webDriver);
-        likedPage.addToList(webDriver);
+        for (String product : products) {
+            searchPage.findProducts(product, webDriver);
+            searchPage.openProduct(webDriver);
+            likedPage.addToList(webDriver);
+        }
     }
 
 
